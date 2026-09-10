@@ -60,11 +60,11 @@ function Index() {
       <main>
         <section id="top" className="relative min-h-[94svh] pt-28">
           <span aria-hidden className="pointer-events-none absolute -left-14 top-20 font-display text-[24rem] italic leading-none text-ink/[0.035]">V</span>
-          <div className="mx-auto grid min-h-[calc(94svh-7rem)] max-w-7xl items-center gap-12 px-5 pb-14 md:px-10 lg:grid-cols-12 lg:gap-16">
+          <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 pb-14 md:min-h-[calc(94svh-7rem)] md:gap-12 md:px-10 lg:grid-cols-12 lg:gap-16">
             <Reveal className="relative lg:col-span-6 lg:order-2">
               <div className="absolute -left-4 -top-4 h-full w-full border border-lipstick/35" />
-              <div className="image-reveal relative aspect-[4/5] overflow-hidden shadow-luxury">
-                <img src={vestaPortrait} alt="Веста Беспалова" className="h-full w-full object-cover object-top transition-transform duration-1000 hover:scale-[1.025]" />
+              <div className="image-reveal relative aspect-[16/10] overflow-hidden shadow-luxury md:aspect-[4/5]">
+                <img src={vestaPortrait} alt="Веста Беспалова" className="h-full w-full object-cover object-[center_28%] transition-transform duration-1000 hover:scale-[1.025] md:object-top" />
               </div>
               <div className="absolute -bottom-5 right-0 bg-paper px-6 py-4 shadow-soft md:-right-7 md:px-8">
                 <p className="font-display text-xl italic">Дар должен быть проявлен</p>
