@@ -164,6 +164,19 @@ h1, h2, h3, .font-display {
   &:hover { color: var(--color-lipstick); padding-left: 0.75rem; }
 }
 
+@media (max-width: 639px) {
+  .program-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .program-row > .font-display:first-of-type {
+    flex: 1 1 calc(100% - 6rem);
+  }
+  .program-row > .text-lipstick {
+    margin-left: auto;
+  }
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
