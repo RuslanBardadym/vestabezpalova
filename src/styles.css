@@ -28,6 +28,9 @@
 
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Manrope", system-ui, sans-serif;
+
+  --shadow-luxury: 0 35px 80px -35px color-mix(in oklab, var(--color-ink) 35%, transparent);
+  --shadow-soft: 0 18px 50px -22px color-mix(in oklab, var(--color-ink) 28%, transparent);
 }
 
 html {
@@ -38,6 +41,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-body);
+  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, .font-display {
@@ -52,11 +56,130 @@ h1, h2, h3, .font-display {
 /* Капс + трекинг для микронадписей */
 @utility micro {
   text-transform: uppercase;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   font-size: 0.6875rem;
   font-weight: 600;
   font-family: var(--font-body);
 }
+
+@utility nav-link {
+  position: relative;
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 300ms ease;
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.4rem;
+    left: 0;
+    height: 1px;
+    background: var(--color-lipstick);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 400ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  &:hover::after { transform: scaleX(1); transform-origin: left; }
+}
+
+@utility button-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: var(--color-lipstick);
+  color: var(--color-paper);
+  padding: 1rem 1.5rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 350ms ease, transform 350ms ease;
+  &:hover { background: var(--color-lipstick-deep); transform: translateY(-2px); }
+}
+
+@utility button-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding: 1.05rem 1.65rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background 350ms ease, transform 350ms ease;
+  &:hover { background: var(--color-lipstick); transform: translateY(-2px); }
+}
+
+@utility button-light {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  padding: 1.05rem 1.65rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: transform 350ms ease;
+  &:hover { transform: translateY(-2px); }
+}
+
+@utility button-outline {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid color-mix(in oklab, var(--color-ink) 35%, transparent);
+  padding: 1.05rem 1.65rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: border-color 350ms ease, color 350ms ease;
+  &:hover { border-color: var(--color-lipstick); color: var(--color-lipstick); }
+}
+
+@utility text-link {
+  border-bottom: 1px solid color-mix(in oklab, currentColor 30%, transparent);
+  padding-bottom: 0.25rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: border-color 300ms ease, color 300ms ease;
+  &:hover { border-color: var(--color-lipstick); color: var(--color-lipstick); }
+}
+
+@utility program-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid color-mix(in oklab, var(--color-ink) 15%, transparent);
+  padding: 1.25rem 0;
+  transition: color 350ms ease, padding 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  &:first-child { border-top: 1px solid color-mix(in oklab, var(--color-ink) 15%, transparent); }
+  &:hover { color: var(--color-lipstick); padding-left: 0.75rem; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 900ms cubic-bezier(0.19, 1, 0.22, 1), transform 900ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+.image-reveal { clip-path: inset(0 0 100% 0); animation: image-open 1.2s 250ms cubic-bezier(0.19, 1, 0.22, 1) forwards; }
+@keyframes image-open { to { clip-path: inset(0 0 0 0); } }
+
+.faq summary { display: flex; cursor: pointer; list-style: none; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.5rem 0; font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq p { max-width: 42rem; padding: 0 3rem 1.5rem 0; color: var(--color-muted-foreground); font-size: 0.875rem; font-weight: 300; line-height: 1.8; }
+.faq-plus { color: var(--color-lipstick); font-family: var(--font-body); font-size: 1.5rem; font-weight: 300; transition: transform 400ms ease; }
+.faq[open] .faq-plus { transform: rotate(45deg); }
 
 /* Красный перечёрк для старых цен */
 @utility strike-red {
@@ -88,4 +211,11 @@ h1, h2, h3, .font-display {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+  .image-reveal { clip-path: none; }
 }
