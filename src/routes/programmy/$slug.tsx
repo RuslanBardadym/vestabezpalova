@@ -1,4 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Reveal } from "../../components/Reveal";
 import { getProduct, formatPrice, sections, CONTACT_URL } from "../../lib/products";
 
 export const Route = createFileRoute("/programmy/$slug")({
@@ -22,82 +24,59 @@ export const Route = createFileRoute("/programmy/$slug")({
 
 function ProductPage() {
   const { product } = Route.useLoaderData();
-  const section = sections.find((s) => s.id === product.section);
+  const section = sections.find((item) => item.id === product.section);
 
   return (
     <div className="min-h-screen bg-paper text-ink">
-      <header className="border-b-2 border-ink">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 md:px-8">
-          <Link to="/" className="font-display text-xl font-bold uppercase md:text-2xl">
-            Веста Беспалова
-          </Link>
-          <Link to="/" className="micro hover:text-lipstick">
-            ← Все программы
-          </Link>
+      <header className="border-b border-ink/10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 md:px-10">
+          <Link to="/" className="font-display text-xl font-semibold">Веста Беспалова</Link>
+          <Link to="/" hash="programmy" className="nav-link flex items-center gap-2"><ArrowLeft size={14} /> Все программы</Link>
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-4 py-12 md:px-8 md:py-20">
-        {section && <p className="micro text-lipstick">{section.title}</p>}
-        <h1 className="fade-up mt-4 font-display text-5xl font-semibold uppercase leading-[1.05] md:text-7xl">
-          {product.name}
-        </h1>
-
-        <div className="mt-10 grid gap-10 md:grid-cols-[1fr_320px]">
-          <div className="fade-up space-y-4 text-base leading-relaxed">
-            {product.description.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-            {product.includes.length > 0 && (
-              <div className="mt-8 border-2 border-ink p-6">
-                <p className="micro text-lipstick">Внутри программы</p>
-                <ul className="mt-4 space-y-2 text-sm leading-relaxed">
-                  {product.includes.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="text-lipstick">—</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+      <main>
+        <section className="relative overflow-hidden py-20 md:py-32">
+          <span aria-hidden className="pointer-events-none absolute -right-12 -top-24 font-display text-[28rem] italic leading-none text-ink/[0.03]">V</span>
+          <div className="mx-auto grid max-w-7xl gap-14 px-5 md:px-10 lg:grid-cols-12">
+            <Reveal className="lg:col-span-8">
+              <p className="micro flex items-center gap-4 text-lipstick"><span className="h-px w-10 bg-current" />{section?.title}</p>
+              <h1 className="mt-8 max-w-5xl font-display text-6xl font-light leading-[0.88] md:text-8xl">{product.name}</h1>
+              <p className="mt-8 max-w-2xl font-display text-2xl font-light italic leading-snug text-muted-foreground md:text-3xl">{product.short}</p>
+            </Reveal>
+            <Reveal className="self-end border-y border-ink/15 py-7 lg:col-span-3 lg:col-start-10" delay={120}>
+              <p className="micro text-muted-foreground">Стоимость</p>
+              <p className="mt-2 font-display text-5xl font-light text-lipstick">{formatPrice(product.price)}</p>
+              <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="button-dark mt-7 w-full justify-center">Получить доступ <ArrowRight size={15} /></a>
+            </Reveal>
           </div>
+        </section>
 
-          <aside className="fade-up h-fit border-2 border-ink p-6 md:sticky md:top-8">
-            <p className="micro text-muted-foreground">Стоимость</p>
-            <p className="mt-2 font-display text-5xl font-bold text-lipstick">
-              {formatPrice(product.price)}
-            </p>
-            <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-              Материалы размещены в закрытом Telegram-пространстве. Доступ предоставляется на три
-              месяца, заниматься можно в своём темпе.
-            </p>
-            <a
-              href={CONTACT_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="micro mt-6 block bg-lipstick px-6 py-4 text-center text-paper transition-colors hover:bg-lipstick-deep"
-            >
-              Получить доступ
-            </a>
-            <a
-              href={CONTACT_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="micro mt-3 block border-2 border-ink px-6 py-4 text-center transition-colors hover:bg-ink hover:text-paper"
-            >
-              Задать вопрос
-            </a>
-          </aside>
-        </div>
+        <section className="bg-ink py-20 text-paper md:py-28">
+          <div className="mx-auto grid max-w-7xl gap-16 px-5 md:px-10 lg:grid-cols-12">
+            <Reveal className="lg:col-span-5">
+              <p className="micro flex items-center gap-4 text-paper/50"><span className="h-px w-10 bg-current" />О программе</p>
+              <div className="mt-7 space-y-5 font-light leading-8 text-paper/65">{product.description.map((text) => <p key={text}>{text}</p>)}</div>
+              <p className="mt-10 border-l border-lipstick pl-6 font-display text-2xl italic text-paper">Занимайтесь в своём темпе. Доступ к материалам — три месяца.</p>
+            </Reveal>
+            {product.includes.length > 0 && <Reveal className="lg:col-span-6 lg:col-start-7" delay={100}>
+              <p className="font-display text-4xl font-light">Что внутри</p>
+              <ol className="mt-8 divide-y divide-paper/15 border-t border-paper/15">{product.includes.map((item, index) => <li key={item} className="flex gap-6 py-5"><span className="font-display italic text-lipstick">{String(index + 1).padStart(2, '0')}</span><span className="font-light text-paper/75">{item}</span></li>)}</ol>
+            </Reveal>}
+          </div>
+        </section>
+
+        <section className="py-24 text-center md:py-32">
+          <Reveal className="mx-auto max-w-3xl px-5">
+            <p className="font-display text-2xl italic text-lipstick">Готовы начать?</p>
+            <h2 className="mt-4 font-display text-5xl font-light leading-none md:text-7xl">Получите доступ к программе</h2>
+            <p className="mx-auto mt-6 max-w-lg font-light leading-7 text-muted-foreground">Материалы находятся в закрытом Telegram-пространстве. Веста ответит на вопросы и поможет с доступом.</p>
+            <div className="mt-9 flex flex-wrap justify-center gap-5"><a href={CONTACT_URL} target="_blank" rel="noreferrer" className="button-primary">Получить доступ <ArrowRight size={15} /></a><a href={CONTACT_URL} target="_blank" rel="noreferrer" className="button-outline">Задать вопрос</a></div>
+          </Reveal>
+        </section>
       </main>
 
-      <footer className="border-t-4 border-ink bg-ink text-paper">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-8 md:px-8">
-          <p className="font-display text-lg font-bold uppercase">Веста Беспалова</p>
-          <Link to="/" className="micro hover:text-lipstick">На главную</Link>
-        </div>
-      </footer>
+      <footer className="bg-ink py-10 text-paper"><div className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-10"><p className="font-display text-xl">Веста Беспалова</p><Link to="/" className="nav-link text-paper">На главную</Link></div></footer>
     </div>
   );
 }
