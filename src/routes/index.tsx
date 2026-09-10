@@ -1,13 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { Reveal } from "../components/Reveal";
+import { ProductBox } from "../components/ProductBox";
 import { sections, productsBySection, formatPrice, CONTACT_URL } from "../lib/products";
 import heroBg from "../assets/hero-bg.jpg";
 import vestaHero from "../assets/vesta-hero.png.asset.json";
 import vestaAbout from "../assets/vesta-about.png.asset.json";
-import ezoterikBox from "../assets/course-ezoterik-box.png.asset.json";
-import masterTaroBox from "../assets/course-master-taro-box.png.asset.json";
-import severnayaMagiyaBox from "../assets/course-severnaya-magiya-box.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,12 +36,6 @@ const faq = [
   ["Как попасть в наставничество?", "Напишите Весте и коротко расскажите о своей ситуации. После знакомства она предложит подходящий формат."],
 ];
 
-const featuredProductVisuals: Record<string, string> = {
-  "ezoterik-u-kotorogo-pokupayut": ezoterikBox.url,
-  "master-taro": masterTaroBox.url,
-  "severnaya-magiya": severnayaMagiyaBox.url,
-};
-
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return <p className={`micro flex items-center gap-4 ${light ? "text-paper/60" : "text-lipstick"}`}><span className="h-px w-10 bg-current" />{children}</p>;
 }
@@ -73,8 +65,8 @@ function Index() {
           <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 pb-14 md:min-h-[calc(94svh-7rem)] md:gap-12 md:px-10 lg:grid-cols-12 lg:gap-16">
             <Reveal className="relative lg:col-span-6 lg:order-2">
               <div className="absolute -left-4 -top-4 h-full w-full border border-lipstick/35" />
-              <div className="image-reveal relative aspect-[16/10] overflow-hidden shadow-luxury md:aspect-[4/5]">
-                <img src={vestaHero.url} alt="Веста Беспалова с лимоном" width={3024} height={4032} fetchPriority="high" className="h-full w-full object-cover object-[center_34%] transition-transform duration-1000 hover:scale-[1.025] md:object-[center_22%]" />
+              <div className="image-reveal relative aspect-[4/5] overflow-hidden shadow-luxury">
+                <img src={vestaHero.url} alt="Веста Беспалова с лимоном" width={3024} height={4032} fetchPriority="high" className="h-full w-full object-cover object-[center_20%] transition-transform duration-1000 hover:scale-[1.025] md:object-[center_18%]" />
               </div>
               <div className="absolute -bottom-5 right-0 bg-paper px-6 py-4 shadow-soft md:-right-7 md:px-8">
                 <p className="font-display text-xl italic">Дар должен быть проявлен</p>
@@ -146,13 +138,18 @@ function Index() {
                   <Reveal className="grid gap-5 md:grid-cols-12">
                     <p className="font-display text-xl italic text-lipstick md:col-span-2">0{sectionIndex + 1}</p>
                     <div className="md:col-span-4"><h3 className="font-display text-4xl font-light leading-none md:text-5xl">{section.title}</h3><p className="mt-4 text-sm font-light leading-6 text-muted-foreground">{section.lead}</p></div>
-                    <div className="md:col-span-6 md:pl-8">
+                    <div className="grid gap-5 md:col-span-8 md:grid-cols-2 md:pl-8">
                       {productsBySection(section.id).map((product) => (
-                        <Link key={product.slug} to="/programmy/$slug" params={{ slug: product.slug }} className="program-row group">
-                          {featuredProductVisuals[product.slug] && <img src={featuredProductVisuals[product.slug]} alt={`Коробка программы «${product.name}»`} width={1200} height={1200} loading="lazy" className="h-20 w-20 shrink-0 object-contain transition-transform duration-500 group-hover:-translate-y-1 md:h-24 md:w-24" />}
-                          <span className="font-display text-2xl font-light md:text-3xl">{product.name}</span>
-                          <span className="ml-auto whitespace-nowrap font-display text-xl text-lipstick">{formatPrice(product.price)}</span>
-                          <ArrowDownRight className="shrink-0 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1" size={20} />
+                        <Link key={product.slug} to="/programmy/$slug" params={{ slug: product.slug }} className="program-card group">
+                          <div className="program-card__visual"><ProductBox slug={product.slug} name={product.name} compact /></div>
+                          <div className="program-card__body">
+                            <h4 className="font-display text-3xl font-light leading-none">{product.name}</h4>
+                            <p className="mt-4 text-sm font-light leading-6 text-muted-foreground">{product.short}</p>
+                            <div className="mt-auto flex items-end justify-between gap-4 pt-7">
+                              <span className="whitespace-nowrap font-display text-2xl text-lipstick">{formatPrice(product.price)}</span>
+                              <span className="program-card__link">Подробнее <ArrowDownRight size={16} /></span>
+                            </div>
+                          </div>
                         </Link>
                       ))}
                     </div>
@@ -192,7 +189,7 @@ function Index() {
           <div className="mx-auto grid max-w-7xl items-center gap-16 px-5 md:px-10 lg:grid-cols-12">
             <Reveal className="relative lg:col-span-5">
               <div className="absolute -right-4 -top-4 h-full w-full border border-lipstick/45" />
-              <img src={vestaAbout.url} alt="Веста Беспалова — эзотерик и наставник" width={3024} height={4032} loading="lazy" className="relative aspect-[4/5] w-full object-cover object-[center_18%]" />
+              <img src={vestaAbout.url} alt="Веста Беспалова — эзотерик и наставник" width={3024} height={4032} loading="lazy" className="relative aspect-[4/5] w-full object-cover object-[center_12%] md:object-[center_10%]" />
             </Reveal>
             <Reveal className="lg:col-span-6 lg:col-start-7" delay={100}>
               <Eyebrow light>О Весте</Eyebrow>
