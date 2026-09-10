@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getProduct, formatPrice, sections, CONTACT_URL } from "../lib/products";
+import { getProduct, formatPrice, sections, CONTACT_URL } from "../../lib/products";
 
 export const Route = createFileRoute("/programmy/$slug")({
   loader: ({ params }) => {
