@@ -136,8 +136,8 @@ function Index() {
               {sections.map((section, sectionIndex) => (
                 <div key={section.id} className="border-t border-ink/20 py-14 md:py-20">
                   <Reveal className="grid gap-5 md:grid-cols-12">
-                    <p className="font-display text-xl italic text-lipstick md:col-span-2">0{sectionIndex + 1}</p>
-                    <div className="md:col-span-4"><h3 className="font-display text-4xl font-light leading-none md:text-5xl">{section.title}</h3><p className="mt-4 text-sm font-light leading-6 text-muted-foreground">{section.lead}</p></div>
+                    <p className="font-display text-xl italic text-lipstick md:col-span-1">0{sectionIndex + 1}</p>
+                    <div className="md:col-span-3"><h3 className="font-display text-4xl font-light leading-none md:text-5xl">{section.title}</h3><p className="mt-4 text-sm font-light leading-6 text-muted-foreground">{section.lead}</p></div>
                     <div className="grid gap-5 md:col-span-8 md:grid-cols-2 md:pl-8">
                       {productsBySection(section.id).map((product) => (
                         <Link key={product.slug} to="/programmy/$slug" params={{ slug: product.slug }} className="program-card group">
