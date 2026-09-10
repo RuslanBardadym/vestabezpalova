@@ -2,6 +2,15 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Reveal } from "../../components/Reveal";
 import { getProduct, formatPrice, sections, CONTACT_URL } from "../../lib/products";
+import ezoterikBox from "../../assets/course-ezoterik-box.png.asset.json";
+import masterTaroBox from "../../assets/course-master-taro-box.png.asset.json";
+import severnayaMagiyaBox from "../../assets/course-severnaya-magiya-box.png.asset.json";
+
+const productVisuals: Record<string, string> = {
+  "ezoterik-u-kotorogo-pokupayut": ezoterikBox.url,
+  "master-taro": masterTaroBox.url,
+  "severnaya-magiya": severnayaMagiyaBox.url,
+};
 
 export const Route = createFileRoute("/programmy/$slug")({
   loader: ({ params }) => {
@@ -25,6 +34,7 @@ export const Route = createFileRoute("/programmy/$slug")({
 function ProductPage() {
   const { product } = Route.useLoaderData();
   const section = sections.find((item) => item.id === product.section);
+  const productVisual = productVisuals[product.slug];
 
   return (
     <div className="min-h-screen bg-paper text-ink">
@@ -38,17 +48,25 @@ function ProductPage() {
       <main>
         <section className="relative overflow-hidden py-20 md:py-32">
           <span aria-hidden className="pointer-events-none absolute -right-12 -top-24 font-display text-[28rem] italic leading-none text-ink/[0.03]">V</span>
-          <div className="mx-auto grid max-w-7xl gap-14 px-5 md:px-10 lg:grid-cols-12">
-            <Reveal className="lg:col-span-8">
+          <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 md:px-10 lg:grid-cols-12">
+            <Reveal className={productVisual ? "lg:col-span-7" : "lg:col-span-8"}>
               <p className="micro flex items-center gap-4 text-lipstick"><span className="h-px w-10 bg-current" />{section?.title}</p>
               <h1 className="mt-8 max-w-5xl font-display text-6xl font-light leading-[0.88] md:text-8xl">{product.name}</h1>
               <p className="mt-8 max-w-2xl font-display text-2xl font-light italic leading-snug text-muted-foreground md:text-3xl">{product.short}</p>
+              {productVisual && <div className="mt-10 max-w-sm border-y border-ink/15 py-7">
+                <p className="micro text-muted-foreground">Стоимость</p>
+                <p className="mt-2 font-display text-5xl font-light text-lipstick">{formatPrice(product.price)}</p>
+                <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="button-dark mt-7 w-full justify-center">Получить доступ <ArrowRight size={15} /></a>
+              </div>}
             </Reveal>
-            <Reveal className="self-end border-y border-ink/15 py-7 lg:col-span-3 lg:col-start-10" delay={120}>
+            {productVisual ? <Reveal className="relative mx-auto w-full max-w-lg lg:col-span-5" delay={120}>
+              <span aria-hidden className="absolute inset-x-[18%] bottom-[8%] h-[12%] bg-ink/10 blur-2xl" />
+              <img src={productVisual} alt={`Коробка программы «${product.name}»`} width={1200} height={1200} className="relative w-full object-contain" />
+            </Reveal> : <Reveal className="self-end border-y border-ink/15 py-7 lg:col-span-3 lg:col-start-10" delay={120}>
               <p className="micro text-muted-foreground">Стоимость</p>
               <p className="mt-2 font-display text-5xl font-light text-lipstick">{formatPrice(product.price)}</p>
               <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="button-dark mt-7 w-full justify-center">Получить доступ <ArrowRight size={15} /></a>
-            </Reveal>
+            </Reveal>}
           </div>
         </section>
 
