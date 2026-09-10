@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Reveal } from "../../components/Reveal";
-import { ProductBox } from "../../components/ProductBox";
+import { ProductMockup } from "../../components/ProductMockup";
 import { getProduct, formatPrice, sections, CONTACT_URL } from "../../lib/products";
 
 export const Route = createFileRoute("/programmy/$slug")({
@@ -51,7 +51,7 @@ function ProductPage() {
               </div>
             </Reveal>
             <Reveal className="mx-auto w-full max-w-lg lg:col-span-5" delay={120}>
-              <ProductBox slug={product.slug} name={product.name} />
+               <ProductMockup slug={product.slug} name={product.name} />
             </Reveal>
           </div>
         </section>

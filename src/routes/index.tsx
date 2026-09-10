@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { Reveal } from "../components/Reveal";
-import { ProductBox } from "../components/ProductBox";
+import { ProductMockup } from "../components/ProductMockup";
 import { sections, productsBySection, formatPrice, CONTACT_URL } from "../lib/products";
 import heroBg from "../assets/hero-bg.jpg";
 import vestaHero from "../assets/vesta-hero.png.asset.json";
@@ -141,7 +141,7 @@ function Index() {
                     <div className="grid gap-5 md:col-span-8 md:grid-cols-2 md:pl-8">
                       {productsBySection(section.id).map((product) => (
                         <Link key={product.slug} to="/programmy/$slug" params={{ slug: product.slug }} className="program-card group">
-                          <div className="program-card__visual"><ProductBox slug={product.slug} name={product.name} compact /></div>
+                          <div className="program-card__visual"><ProductMockup slug={product.slug} name={product.name} compact /></div>
                           <div className="program-card__body">
                             <h4 className="font-display text-3xl font-light leading-none">{product.name}</h4>
                             <p className="mt-4 text-sm font-light leading-6 text-muted-foreground">{product.short}</p>
