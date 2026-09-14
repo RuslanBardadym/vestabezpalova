@@ -50,7 +50,7 @@ function Index() {
     <div className="overflow-hidden bg-paper text-ink">
       <header className="absolute inset-x-0 top-0 z-50">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 md:px-10">
-          <a href="#top" className="font-display text-xl font-semibold">Веста Беспалова</a>
+          <a href="#top" className="font-display text-xl font-semibold">Веста Безпалова</a>
           <nav className="hidden items-center gap-8 lg:flex">
             <a href="#programmy" className="nav-link">Программы</a>
             <a href="#nastavnichestvo" className="nav-link">Наставничество</a>
