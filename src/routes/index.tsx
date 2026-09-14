@@ -194,7 +194,7 @@ function Index() {
           <div className="mx-auto grid max-w-7xl items-center gap-16 px-5 md:px-10 lg:grid-cols-12">
             <Reveal className="relative lg:col-span-5">
               <div className="absolute -right-4 -top-4 h-full w-full border border-lipstick/45" />
-              <img src={vestaAbout.url} alt="Веста Беспалова — эзотерик и наставник" width={3024} height={4032} loading="lazy" className="relative aspect-[4/5] w-full object-cover object-[center_12%] md:object-[center_10%]" />
+              <img src={vestaAbout.url} alt="Веста Безпалова — эзотерик и наставник" width={3024} height={4032} loading="lazy" className="relative aspect-[4/5] w-full object-cover object-[center_12%] md:object-[center_10%]" />
             </Reveal>
             <Reveal className="lg:col-span-6 lg:col-start-7" delay={100}>
               <Eyebrow light>О Весте</Eyebrow>
