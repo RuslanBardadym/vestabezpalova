@@ -121,7 +121,9 @@ function TopicList() {
                 >
                   <span className="topic-list__title">{section.title}</span>
                   <span className="topic-list__meta">
-                    <span>{items.length} программ</span>
+                    <span>
+                      {items.length} {items.length >= 5 ? "программ" : "программы"}
+                    </span>
                     <span className="text-lipstick">от {formatPrice(from)}</span>
                     <ArrowRight size={16} className="topic-list__arrow" />
                   </span>
