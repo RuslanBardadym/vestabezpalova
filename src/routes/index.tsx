@@ -76,7 +76,7 @@ function Index() {
             <Reveal className="relative z-10 lg:col-span-6 lg:order-1" delay={120}>
               <Eyebrow>Масштаб и деньги в эзотерике</Eyebrow>
               <h1 className="mt-6 font-display text-[clamp(3.6rem,7vw,7.2rem)] font-light leading-[0.82]">
-                Веста<br /><span className="ml-[12%] italic text-lipstick">Беспалова</span>
+                 Веста<br /><span className="ml-[12%] italic text-lipstick">Безпалова</span>
               </h1>
               <p className="mt-9 max-w-lg font-display text-3xl font-light leading-tight md:text-4xl">
                 Я знаю, как зарабатывать много на эзотерике.
