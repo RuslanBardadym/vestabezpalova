@@ -67,15 +67,20 @@ function SectionNav({ activeId }: { activeId: string | null }) {
 
 function Index() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const sectionRatios = useRef<Record<string, number>>({});
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
+          sectionRatios.current[entry.target.id] = entry.intersectionRatio;
         });
+        const best = Object.entries(sectionRatios.current)
+          .filter(([, ratio]) => ratio > 0)
+          .sort((a, b) => b[1] - a[1])[0];
+        if (best) setActiveSection(best[0]);
       },
-      { rootMargin: "-40% 0px -50% 0px", threshold: 0 },
+      { rootMargin: "-42% 0px -48% 0px", threshold: [0, 0.05, 0.1, 0.2, 0.3, 0.5] },
     );
 
     sections.forEach((section) => {
