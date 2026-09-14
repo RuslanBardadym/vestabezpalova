@@ -132,31 +132,35 @@ function Index() {
               <Heading>Выберите то, что нужно вам <em className="font-light text-lipstick">сейчас</em></Heading>
               <p className="mt-7 max-w-xl font-light leading-7 text-muted-foreground">Начните с небольшой практики, освойте направление, раскройте Дар или пересоберите профессиональный проект.</p>
             </Reveal>
-            <div className="mt-20">
+            <div className="mt-16 md:mt-20">
               {sections.map((section, sectionIndex) => (
-                <div key={section.id} className="border-t border-ink/20 py-14 md:py-20">
-                  <Reveal className="grid gap-5 md:grid-cols-12">
-                    <p className="font-display text-xl italic text-lipstick md:col-span-1">0{sectionIndex + 1}</p>
-                    <div className="md:col-span-3"><h3 className="font-display text-4xl font-light leading-none md:text-5xl">{section.title}</h3><p className="mt-4 text-sm font-light leading-6 text-muted-foreground">{section.lead}</p></div>
-                    <div className="grid gap-5 md:col-span-8 md:grid-cols-2 md:pl-8">
-                      {productsBySection(section.id).map((product) => (
-                        <Link key={product.slug} to="/programmy/$slug" params={{ slug: product.slug }} className="program-card group">
-                          <div className="program-card__visual"><ProductMockup slug={product.slug} name={product.name} compact /></div>
-                          <div className="program-card__body">
-                            <h4 className="font-display text-3xl font-light leading-none">{product.name}</h4>
-                            <p className="mt-4 text-sm font-light leading-6 text-muted-foreground">{product.short}</p>
-                            <div className="mt-auto flex items-end justify-between gap-4 pt-7">
-                              <span className="whitespace-nowrap font-display text-2xl text-lipstick">{formatPrice(product.price)}</span>
-                              <span className="program-card__link">Подробнее <ArrowDownRight size={16} /></span>
-                            </div>
-                          </div>
-                        </Link>
-                      ))}
+                <div key={section.id} className="border-t border-ink/20 py-12 md:py-16">
+                  <Reveal className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-10">
+                    <div className="flex min-w-0 items-start gap-5">
+                      <p className="shrink-0 font-display text-xl italic text-lipstick">0{sectionIndex + 1}</p>
+                      <h3 className="font-display text-4xl font-light leading-[1.05] md:text-5xl">{section.title}</h3>
                     </div>
+                    <p className="max-w-md text-sm font-light leading-6 text-muted-foreground">{section.lead}</p>
+                  </Reveal>
+                  <Reveal className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3" delay={100}>
+                    {productsBySection(section.id).map((product) => (
+                      <Link key={product.slug} to="/programmy/$slug" params={{ slug: product.slug }} className="program-card group">
+                        <div className="program-card__visual"><ProductMockup slug={product.slug} name={product.name} compact /></div>
+                        <div className="program-card__body">
+                          <h4 className="font-display text-3xl font-light leading-[1.05]">{product.name}</h4>
+                          <p className="mt-4 text-sm font-light leading-6 text-muted-foreground">{product.short}</p>
+                          <div className="mt-auto flex items-end justify-between gap-4 pt-7">
+                            <span className="whitespace-nowrap font-display text-2xl text-lipstick">{formatPrice(product.price)}</span>
+                            <span className="program-card__link">Подробнее <ArrowDownRight size={16} /></span>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
                   </Reveal>
                 </div>
               ))}
             </div>
+
           </div>
         </section>
 
