@@ -98,6 +98,45 @@ function SectionNav({ activeId }: { activeId: string | null }) {
   );
 }
 
+function TopicList() {
+  return (
+    <section className="border-t border-ink/10 py-14 md:py-20">
+      <div className="mx-auto max-w-7xl px-5 md:px-10">
+        <Reveal>
+          <Eyebrow>Что я даю</Eyebrow>
+        </Reveal>
+        <div className="topic-list mt-8 md:mt-10">
+          {sections.map((section, index) => {
+            const items = productsBySection(section.id);
+            const from = Math.min(...items.map((item) => item.price));
+            return (
+              <Reveal key={section.id} delay={index * 70}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const element = document.getElementById(section.id);
+                    if (element) element.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                  className="topic-list__row"
+                >
+                  <span className="topic-list__title">{section.title}</span>
+                  <span className="topic-list__meta">
+                    <span>
+                      {items.length} {items.length >= 5 ? "программ" : "программы"}
+                    </span>
+                    <span className="text-lipstick">от {formatPrice(from)}</span>
+                    <ArrowRight size={16} className="topic-list__arrow" />
+                  </span>
+                </button>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Index() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const sectionRatios = useRef<Record<string, number>>({});
@@ -149,14 +188,14 @@ function Index() {
       </header>
 
       <main>
-        <section id="top" className="relative min-h-[94svh] pt-28">
+        <section id="top" className="relative min-h-[72svh] pt-28 md:min-h-[80svh]">
           <span
             aria-hidden
             className="pointer-events-none absolute -left-14 top-20 font-display text-[24rem] italic leading-none text-ink/[0.035]"
           >
             V
           </span>
-          <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 pb-14 md:min-h-[calc(94svh-7rem)] md:gap-12 md:px-10 lg:grid-cols-12 lg:gap-16">
+          <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 pb-14 md:min-h-[calc(80svh-7rem)] md:gap-12 md:px-10 lg:grid-cols-12 lg:gap-16">
             <Reveal className="relative lg:col-span-6 lg:order-2">
               <div className="absolute -left-4 -top-4 h-full w-full border border-lipstick/35" />
               <div className="image-reveal relative aspect-[4/5] overflow-hidden shadow-luxury">
@@ -199,6 +238,8 @@ function Index() {
             </Reveal>
           </div>
         </section>
+
+        <TopicList />
 
         <section className="border-y border-ink/10">
           <div className="mx-auto grid max-w-7xl grid-cols-2 px-5 md:grid-cols-4 md:px-10">
