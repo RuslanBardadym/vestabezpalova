@@ -173,9 +173,10 @@ function Index() {
               <Heading>Выберите то, что нужно вам <em className="font-light text-lipstick">сейчас</em></Heading>
               <p className="mt-7 max-w-xl font-light leading-7 text-muted-foreground">Начните с небольшой практики, освойте направление, раскройте Дар или пересоберите профессиональный проект.</p>
             </Reveal>
-            <div className="mt-16 md:mt-20">
+            <SectionNav activeId={activeSection} />
+            <div className="mt-10 md:mt-12">
               {sections.map((section, sectionIndex) => (
-                <div key={section.id} className="border-t border-ink/20 py-12 md:py-16">
+                <div id={section.id} key={section.id} className="border-t border-ink/20 py-12 md:py-16 scroll-mt-28">
                   <Reveal className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-10">
                     <div className="flex min-w-0 items-start gap-5">
                       <p className="shrink-0 font-display text-xl italic text-lipstick">0{sectionIndex + 1}</p>
