@@ -45,6 +45,26 @@ function Heading({ children, light = false }: { children: React.ReactNode; light
   return <h2 className={`mt-5 max-w-4xl font-display text-5xl font-light leading-[0.95] md:text-7xl ${light ? "text-paper" : "text-ink"}`}>{children}</h2>;
 }
 
+function SectionNav({ activeId }: { activeId: string | null }) {
+  return (
+    <div className="section-nav">
+      {sections.map((section) => (
+        <button
+          key={section.id}
+          type="button"
+          onClick={() => {
+            const element = document.getElementById(section.id);
+            if (element) element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          className={`section-nav__item ${activeId === section.id ? "section-nav__item--active" : ""}`}
+        >
+          {section.title}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div className="overflow-hidden bg-paper text-ink">
