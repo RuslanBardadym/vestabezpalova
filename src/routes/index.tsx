@@ -77,7 +77,7 @@ function Index() {
         });
         const best = Object.entries(sectionRatios.current)
           .filter(([, ratio]) => ratio > 0)
-          .sort((a, b) => b[1] - a[1])[0];
+          .sort((a: [string, number], b: [string, number]) => b[1] - a[1])[0];
         if (best) setActiveSection(best[0]);
       },
       { rootMargin: "-42% 0px -48% 0px", threshold: [0, 0.05, 0.1, 0.2, 0.3, 0.5] },
