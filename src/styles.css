@@ -357,10 +357,10 @@ h1, h2, h3, .font-display {
 .product-box--compact.product-box--masterskaya-mechty .product-box__title { font-size: 0.95rem; }
 
 @media (max-width: 639px) {
-  .program-card__visual { min-height: 14rem; }
-  .program-card__body { min-height: 0; }
+  .program-card__visual { aspect-ratio: 4 / 3; }
   .product-box:not(.product-box--compact) { width: min(100%, 22rem); }
 }
+
 
 .reveal {
   opacity: 0;
