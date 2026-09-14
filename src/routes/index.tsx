@@ -11,9 +11,9 @@ import vestaAbout from "../assets/vesta-about.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Веста Беспалова — масштаб и деньги в эзотерике" },
-      { name: "description", content: "Программы Весты Беспаловой для эзотериков: проявленность, деньги, Таро, Род, магия и личное наставничество." },
-      { property: "og:title", content: "Веста Беспалова — масштаб и деньги в эзотерике" },
+      { title: "Веста Безпалова — масштаб и деньги в эзотерике" },
+      { name: "description", content: "Программы Весты Безпаловой для эзотериков: проявленность, деньги, Таро, Род, магия и личное наставничество." },
+      { property: "og:title", content: "Веста Безпалова — масштаб и деньги в эзотерике" },
       { property: "og:description", content: "От сильной практики — к профессии, высокому чеку и масштабу." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
