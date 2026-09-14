@@ -82,7 +82,7 @@ function Index() {
               <p className="mt-9 max-w-lg font-display text-3xl font-light leading-tight md:text-4xl">
                 Я знаю, как зарабатывать много на эзотерике.
               </p>
-              <p className="mt-5 max-w-md text-sm font-light leading-7 text-muted-foreground md:text-base">
+              <p className="mt-5 max-w-md text-sm font-light leading-7 text-ink/85 md:text-base md:leading-8">
                 Помогаю сильным специалистам становиться востребованными, создавать продукты и уверенно продавать свои знания.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-7">
