@@ -206,6 +206,23 @@ function Index() {
           </div>
         </section>
 
+        <section className="py-16 md:py-24">
+          <div className="mx-auto max-w-7xl px-5 md:px-10">
+            <Reveal>
+              <div className="telegram-section">
+                <div>
+                  <Eyebrow light>Telegram</Eyebrow>
+                  <h2 className="mt-5 font-display text-4xl font-light leading-[1.02] md:text-5xl">Бесплатное обучение <em className="font-light text-lipstick">в Telegram</em></h2>
+                  <p className="mt-5 max-w-lg font-light leading-7 text-paper/65">Вступайте в закрытое сообщество: практики, разборы и поддержка на пути эзотерика.</p>
+                </div>
+                <a href="https://t.me/+DTe_SNWQfLwyODQy" target="_blank" rel="noreferrer" className="button-primary mt-8 md:mt-0">
+                  <Send size={15} /> Войти в Telegram
+                </a>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
         <section className="relative isolate overflow-hidden bg-ink py-28 text-paper md:py-44">
           <img src={heroBg} alt="" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-30" />
           <div className="absolute inset-0 -z-10 bg-ink/70" />
