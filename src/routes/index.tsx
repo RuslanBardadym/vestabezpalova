@@ -67,7 +67,7 @@ function Index() {
             <Reveal className="relative lg:col-span-6 lg:order-2">
               <div className="absolute -left-4 -top-4 h-full w-full border border-lipstick/35" />
               <div className="image-reveal relative aspect-[4/5] overflow-hidden shadow-luxury">
-                <img src={vestaHero.url} alt="Веста Беспалова с лимоном" width={3024} height={4032} fetchPriority="high" className="h-full w-full object-cover object-[center_20%] transition-transform duration-1000 hover:scale-[1.025] md:object-[center_18%]" />
+                <img src={vestaHero.url} alt="Веста Безпалова с лимоном" width={3024} height={4032} fetchPriority="high" className="h-full w-full object-cover object-[center_20%] transition-transform duration-1000 hover:scale-[1.025] md:object-[center_18%]" />
               </div>
               <div className="absolute -bottom-5 right-0 bg-paper px-6 py-4 shadow-soft md:-right-7 md:px-8">
                 <p className="font-display text-xl italic">Дар должен быть проявлен</p>
