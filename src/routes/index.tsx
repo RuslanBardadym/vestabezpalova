@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDownRight, ArrowRight, Send } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Reveal } from "../components/Reveal";
 import { ProductMockup } from "../components/ProductMockup";
 import { sections, productsBySection, formatPrice, CONTACT_URL } from "../lib/products";
