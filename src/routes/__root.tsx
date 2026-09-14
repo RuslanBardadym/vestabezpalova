@@ -78,10 +78,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Веста Безпалова — масштаб и деньги в эзотерике" },
-      { name: "description", content: "Программы Весты Безпаловой для эзотериков: Таро, Род, магия, проявленность и деньги, личное наставничество." },
+      {
+        name: "description",
+        content:
+          "Программы Весты Безпаловой для эзотериков: Таро, Род, магия, проявленность и деньги, личное наставничество.",
+      },
       { name: "author", content: "Веста Безпалова" },
       { property: "og:title", content: "Веста Безпалова — масштаб и деньги в эзотерике" },
-      { property: "og:description", content: "Программы для эзотериков: от первой практики до профессии и высокого чека." },
+      {
+        property: "og:description",
+        content: "Программы для эзотериков: от первой практики до профессии и высокого чека.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

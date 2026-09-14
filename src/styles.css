@@ -44,7 +44,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, .font-display {
+h1,
+h2,
+h3,
+.font-display {
   font-family: var(--font-display);
 }
 
@@ -82,7 +85,10 @@ h1, h2, h3, .font-display {
     transform-origin: right;
     transition: transform 400ms cubic-bezier(0.19, 1, 0.22, 1);
   }
-  &:hover::after { transform: scaleX(1); transform-origin: left; }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
 
 @utility button-primary {
@@ -96,8 +102,13 @@ h1, h2, h3, .font-display {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  transition: background 350ms ease, transform 350ms ease;
-  &:hover { background: var(--color-lipstick-deep); transform: translateY(-2px); }
+  transition:
+    background 350ms ease,
+    transform 350ms ease;
+  &:hover {
+    background: var(--color-lipstick-deep);
+    transform: translateY(-2px);
+  }
 }
 
 @utility button-dark {
@@ -111,8 +122,13 @@ h1, h2, h3, .font-display {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  transition: background 350ms ease, transform 350ms ease;
-  &:hover { background: var(--color-lipstick); transform: translateY(-2px); }
+  transition:
+    background 350ms ease,
+    transform 350ms ease;
+  &:hover {
+    background: var(--color-lipstick);
+    transform: translateY(-2px);
+  }
 }
 
 @utility button-light {
@@ -126,7 +142,9 @@ h1, h2, h3, .font-display {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   transition: transform 350ms ease;
-  &:hover { transform: translateY(-2px); }
+  &:hover {
+    transform: translateY(-2px);
+  }
 }
 
 @utility button-outline {
@@ -138,8 +156,13 @@ h1, h2, h3, .font-display {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  transition: border-color 350ms ease, color 350ms ease;
-  &:hover { border-color: var(--color-lipstick); color: var(--color-lipstick); }
+  transition:
+    border-color 350ms ease,
+    color 350ms ease;
+  &:hover {
+    border-color: var(--color-lipstick);
+    color: var(--color-lipstick);
+  }
 }
 
 @utility text-link {
@@ -149,8 +172,13 @@ h1, h2, h3, .font-display {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  transition: border-color 300ms ease, color 300ms ease;
-  &:hover { border-color: var(--color-lipstick); color: var(--color-lipstick); }
+  transition:
+    border-color 300ms ease,
+    color 300ms ease;
+  &:hover {
+    border-color: var(--color-lipstick);
+    color: var(--color-lipstick);
+  }
 }
 
 @utility program-row {
@@ -159,9 +187,16 @@ h1, h2, h3, .font-display {
   gap: 1rem;
   border-bottom: 1px solid color-mix(in oklab, var(--color-ink) 15%, transparent);
   padding: 1.25rem 0;
-  transition: color 350ms ease, padding 500ms cubic-bezier(0.19, 1, 0.22, 1);
-  &:first-child { border-top: 1px solid color-mix(in oklab, var(--color-ink) 15%, transparent); }
-  &:hover { color: var(--color-lipstick); padding-left: 0.75rem; }
+  transition:
+    color 350ms ease,
+    padding 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  &:first-child {
+    border-top: 1px solid color-mix(in oklab, var(--color-ink) 15%, transparent);
+  }
+  &:hover {
+    color: var(--color-lipstick);
+    padding-left: 0.75rem;
+  }
 }
 
 .program-card {
@@ -170,7 +205,10 @@ h1, h2, h3, .font-display {
   flex-direction: column;
   border: 1px solid color-mix(in oklab, var(--color-ink) 14%, transparent);
   background: var(--color-paper);
-  transition: border-color 400ms ease, box-shadow 400ms ease, transform 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition:
+    border-color 400ms ease,
+    box-shadow 400ms ease,
+    transform 500ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 .program-card:hover {
   border-color: color-mix(in oklab, var(--color-lipstick) 55%, transparent);
@@ -203,7 +241,9 @@ h1, h2, h3, .font-display {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  transition: color 300ms ease, border-color 300ms ease;
+  transition:
+    color 300ms ease,
+    border-color 300ms ease;
 }
 .program-card:hover .program-card__link {
   border-color: var(--color-lipstick);
@@ -216,7 +256,9 @@ h1, h2, h3, .font-display {
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 24px 24px color-mix(in oklab, var(--color-ink) 16%, transparent));
-  transition: transform 600ms cubic-bezier(0.19, 1, 0.22, 1), filter 600ms ease;
+  transition:
+    transform 600ms cubic-bezier(0.19, 1, 0.22, 1),
+    filter 600ms ease;
 }
 .product-mockup--compact {
   width: min(100%, 18rem);
@@ -329,36 +371,65 @@ h1, h2, h3, .font-display {
   font-weight: 700;
   letter-spacing: 0.15em;
 }
-.product-box--compact { width: min(100%, 15rem); }
-.product-box--compact .product-box__title { font-size: 1.2rem; }
-.product-box--compact .product-box__mark { width: 2.8rem; height: 2.8rem; font-size: 2.3rem; }
-.product-box--compact .product-box__meta { font-size: 0.3rem; }
-.product-box--compact .product-box__label { margin-top: 0.5rem; padding-top: 0.35rem; font-size: 0.3rem; }
+.product-box--compact {
+  width: min(100%, 15rem);
+}
+.product-box--compact .product-box__title {
+  font-size: 1.2rem;
+}
+.product-box--compact .product-box__mark {
+  width: 2.8rem;
+  height: 2.8rem;
+  font-size: 2.3rem;
+}
+.product-box--compact .product-box__meta {
+  font-size: 0.3rem;
+}
+.product-box--compact .product-box__label {
+  margin-top: 0.5rem;
+  padding-top: 0.35rem;
+  font-size: 0.3rem;
+}
 
 .product-box--kto-ya-takaya-chtoby-govorit,
 .product-box--taro-dlya-zhizni,
 .product-box--kvantovaya-vetka-roda,
 .product-box--dom-meditatsiy,
-.product-box--mne-mozhno-vsyo { --box-fill: color-mix(in oklab, var(--color-paper) 88%, var(--color-lipstick)); }
+.product-box--mne-mozhno-vsyo {
+  --box-fill: color-mix(in oklab, var(--color-paper) 88%, var(--color-lipstick));
+}
 .product-box--pereproshivka,
 .product-box--master-taro,
 .product-box--prizyv-sily-roda,
 .product-box--sila-vedmy,
-.product-box--masterskaya-mechty { --box-fill: var(--color-ink); color: var(--color-paper); }
+.product-box--masterskaya-mechty {
+  --box-fill: var(--color-ink);
+  color: var(--color-paper);
+}
 .product-box--taro-dlya-sebya,
 .product-box--raspakovka-dara,
 .product-box--severnaya-magiya,
-.product-box--taynye-simvoly { --box-accent: var(--color-ink); }
+.product-box--taynye-simvoly {
+  --box-accent: var(--color-ink);
+}
 .product-box--ezoterik-u-kotorogo-pokupayut .product-box__title,
 .product-box--kto-ya-takaya-chtoby-govorit .product-box__title,
-.product-box--masterskaya-mechty .product-box__title { font-size: 1.75rem; }
+.product-box--masterskaya-mechty .product-box__title {
+  font-size: 1.75rem;
+}
 .product-box--compact.product-box--ezoterik-u-kotorogo-pokupayut .product-box__title,
 .product-box--compact.product-box--kto-ya-takaya-chtoby-govorit .product-box__title,
-.product-box--compact.product-box--masterskaya-mechty .product-box__title { font-size: 0.95rem; }
+.product-box--compact.product-box--masterskaya-mechty .product-box__title {
+  font-size: 0.95rem;
+}
 
 @media (max-width: 639px) {
-  .program-card__visual { aspect-ratio: 4 / 3; }
-  .product-box:not(.product-box--compact) { width: min(100%, 22rem); }
+  .program-card__visual {
+    aspect-ratio: 4 / 3;
+  }
+  .product-box:not(.product-box--compact) {
+    width: min(100%, 22rem);
+  }
 }
 
 .section-nav {
@@ -378,7 +449,10 @@ h1, h2, h3, .font-display {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-ink);
-  transition: border-color 300ms ease, background 300ms ease, color 300ms ease;
+  transition:
+    border-color 300ms ease,
+    background 300ms ease,
+    color 300ms ease;
   white-space: nowrap;
 }
 .section-nav__item:hover {
@@ -414,19 +488,59 @@ h1, h2, h3, .font-display {
 .reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 900ms cubic-bezier(0.19, 1, 0.22, 1), transform 900ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition:
+    opacity 900ms cubic-bezier(0.19, 1, 0.22, 1),
+    transform 900ms cubic-bezier(0.19, 1, 0.22, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-.image-reveal { clip-path: inset(0 0 100% 0); animation: image-open 1.2s 250ms cubic-bezier(0.19, 1, 0.22, 1) forwards; }
-@keyframes image-open { to { clip-path: inset(0 0 0 0); } }
+.image-reveal {
+  clip-path: inset(0 0 100% 0);
+  animation: image-open 1.2s 250ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+@keyframes image-open {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
 
-.faq summary { display: flex; cursor: pointer; list-style: none; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.5rem 0; font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; }
-.faq summary::-webkit-details-marker { display: none; }
-.faq p { max-width: 42rem; padding: 0 3rem 1.5rem 0; color: var(--color-muted-foreground); font-size: 0.875rem; font-weight: 300; line-height: 1.8; }
-.faq-plus { color: var(--color-lipstick); font-family: var(--font-body); font-size: 1.5rem; font-weight: 300; transition: transform 400ms ease; }
-.faq[open] .faq-plus { transform: rotate(45deg); }
+.faq summary {
+  display: flex;
+  cursor: pointer;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq p {
+  max-width: 42rem;
+  padding: 0 3rem 1.5rem 0;
+  color: var(--color-muted-foreground);
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+.faq-plus {
+  color: var(--color-lipstick);
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 300;
+  transition: transform 400ms ease;
+}
+.faq[open] .faq-plus {
+  transform: rotate(45deg);
+}
 
 /* Красный перечёрк для старых цен */
 @utility strike-red {
@@ -461,8 +575,21 @@ h1, h2, h3, .font-display {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-  .reveal { opacity: 1; transform: none; }
-  .image-reveal { clip-path: none; }
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .image-reveal {
+    clip-path: none;
+  }
 }
