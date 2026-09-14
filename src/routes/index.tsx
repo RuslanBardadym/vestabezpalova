@@ -207,12 +207,21 @@ function Index() {
           </div>
         </section>
 
-        <section className="py-24 md:py-36">
-          <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-10 lg:grid-cols-12">
-            <Reveal className="lg:col-span-7"><Eyebrow>Путешествия по местам силы</Eyebrow><Heading>Увидеть мир. Услышать <em className="font-light text-lipstick">себя.</em></Heading></Reveal>
-            <Reveal className="self-end lg:col-span-4 lg:col-start-9" delay={100}><p className="font-light leading-7 text-muted-foreground">Индия, Непал, Тибет, Мексика, США, Мальдивы, Бали и Европа — через древние традиции, практики и внутреннюю работу.</p><a href={CONTACT_URL} target="_blank" rel="noreferrer" className="text-link mt-7 inline-flex">Узнать о путешествиях</a></Reveal>
+        <section className="py-16 md:py-24">
+          <div className="mx-auto max-w-7xl px-5 md:px-10">
+            <Reveal className="grid gap-8 border-y border-ink/15 py-12 md:grid-cols-[1.1fr_0.9fr] md:items-end md:gap-14 md:py-16">
+              <div>
+                <Eyebrow>Путешествия по местам силы</Eyebrow>
+                <h2 className="mt-5 font-display text-4xl font-light leading-[1.02] md:text-6xl">Увидеть мир. Услышать <em className="font-light text-lipstick">себя.</em></h2>
+              </div>
+              <div>
+                <p className="max-w-lg font-light leading-7 text-muted-foreground">Индия, Непал, Тибет, Мексика, США, Мальдивы, Бали и Европа — через древние традиции, практики и внутреннюю работу.</p>
+                <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="text-link mt-6 inline-flex">Узнать о путешествиях</a>
+              </div>
+            </Reveal>
           </div>
         </section>
+
 
         <section id="faq" className="border-t border-ink/10 py-24 md:py-36">
           <div className="mx-auto grid max-w-7xl gap-16 px-5 md:px-10 lg:grid-cols-12">
