@@ -230,7 +230,7 @@ function Index() {
 
       <footer className="bg-ink text-paper">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 md:flex-row md:items-end md:justify-between md:px-10">
-          <div><p className="font-display text-3xl font-light">Веста Беспалова</p><p className="micro mt-2 text-paper/40">Масштаб и деньги в эзотерике</p></div>
+           <div><p className="font-display text-3xl font-light">Веста Безпалова</p><p className="micro mt-2 text-paper/40">Масштаб и деньги в эзотерике</p></div>
           <div className="flex gap-7"><a href="#programmy" className="nav-link text-paper">Программы</a><a href="#faq" className="nav-link text-paper">Вопросы</a><a href={CONTACT_URL} target="_blank" rel="noreferrer" className="nav-link text-paper">Telegram</a></div>
           <p className="text-xs text-paper/35">© {new Date().getFullYear()}</p>
         </div>
