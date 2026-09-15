@@ -6,6 +6,8 @@ export interface Product {
   description: string[];
   includes: string[];
   section: string;
+  paymentUrl?: string; // внешняя ссылка оплаты (WayForPay)
+  paymentNote?: string; // инструкция после оплаты
 }
 
 export interface Section {
@@ -14,7 +16,7 @@ export interface Section {
   lead: string;
 }
 
-export const CONTACT_URL = "https://t.me/VestaBespalova";
+export const CONTACT_URL = "https://t.me/VestaBezpalova";
 
 export const sections: Section[] = [
   {
@@ -98,6 +100,49 @@ export const products: Product[] = [
       "контент и Reels",
       "продажи эзотерических продуктов",
     ],
+  },
+  {
+    slug: "vyydi-iz-teni",
+    name: "Квест «Выйди из тени»",
+    price: 555,
+    section: "proyavlennost",
+    short: "7 дней, чтобы заставить твой Instagram заметить тебя. Не слушать — делать. Каждый день конкретная задача.",
+    description: [
+      "7 дней, чтобы заставить твой Instagram заметить тебя.",
+      "За 7 дней мы будем делать. Не слушать. ДЕЛАТЬ. Каждый день у вас будет конкретная задача.",
+    ],
+    includes: [
+      "День 1. Почему вас сейчас не смотрят и что мешает вашим Reels расти",
+      "День 2. Как находить вирусные темы",
+      "День 3. Первые фразы, от которых невозможно пролистнуть Reels",
+      "День 4. Как снимать вирусный Reels",
+      "День 5. Экспертный Reels, который превращает зрителя в подписчика",
+      "День 6. Что делать после публикации и как использовать комментарии для роста",
+      "День 7. Система Reels: люди не просто смотрят вас, а становятся клиентами",
+    ],
+    paymentUrl: "https://secure.wayforpay.com/button/b94bedc650f82",
+    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
+  },
+  {
+    slug: "audit-ezotericheskogo-biznesa",
+    name: "Аудит эзотерического бизнеса",
+    price: 888,
+    section: "proyavlennost",
+    short: "Полный разбор вашего бизнеса: соцсети, продукт, позиционирование — и конкретные шаги, что менять прямо сейчас.",
+    description: [
+      "Личный разбор вашего эзотерического бизнеса от Весты.",
+      "Мы смотрим всё: что не работает в соцсетях, продукте, продуктовой линейке и позиционировании. Разбираем флагманский продукт.",
+      "Я называю главные затыки и главное — как это сразу изменить и какие шаги сделать в первую очередь.",
+    ],
+    includes: [
+      "разбор соцсетей",
+      "разбор продукта и продуктовой линейки",
+      "позиционирование",
+      "флагманский продукт",
+      "главные затыки и конкретные шаги по изменениям",
+    ],
+    paymentUrl: "https://secure.wayforpay.com/button/b2c1a8ba8dbb4",
+    paymentNote: "После оплаты напишите Весте в Telegram слово «Аудит».",
   },
   {
     slug: "taro-dlya-sebya",

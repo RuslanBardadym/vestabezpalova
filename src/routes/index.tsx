@@ -493,27 +493,50 @@ function Index() {
 
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-5 md:px-10">
-            <Reveal className="grid gap-8 border-y border-ink/15 py-12 md:grid-cols-[1.1fr_0.9fr] md:items-end md:gap-14 md:py-16">
-              <div>
-                <Eyebrow>Путешествия по местам силы</Eyebrow>
-                <h2 className="mt-5 font-display text-4xl font-light leading-[1.02] md:text-6xl">
-                  Увидеть мир. Услышать <em className="font-light text-lipstick">себя.</em>
-                </h2>
-              </div>
-              <div>
-                <p className="max-w-lg font-light leading-7 text-muted-foreground">
-                  Индия, Непал, Тибет, Мексика, США, Мальдивы, Бали и Европа — через древние
-                  традиции, практики и внутреннюю работу.
-                </p>
-                <a
-                  href={CONTACT_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-link mt-6 inline-flex"
-                >
-                  Узнать о путешествиях
-                </a>
-              </div>
+            <Reveal className="border-y border-ink/15 py-12 md:py-16">
+              <details className="faq group">
+                <summary>
+                  <span className="flex flex-col gap-3 md:flex-row md:items-end md:gap-10">
+                    <span>
+                      <Eyebrow>Путешествия по местам силы</Eyebrow>
+                      <span className="mt-4 block font-display text-4xl font-light leading-[1.02] md:text-6xl">
+                        Увидеть мир. Услышать <em className="font-light text-lipstick">себя.</em>
+                      </span>
+                    </span>
+                  </span>
+                  <span className="faq-plus">+</span>
+                </summary>
+                <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:gap-14">
+                  <div>
+                    <p className="micro text-muted-foreground">Ближайшие поездки</p>
+                    <ul className="mt-6 divide-y divide-ink/15 border-y border-ink/15">
+                      <li className="flex flex-wrap items-baseline justify-between gap-3 py-6">
+                        <span className="font-display text-3xl font-light md:text-4xl">Грузия — Армения</span>
+                        <span className="micro text-lipstick">30.10 — 07.11</span>
+                      </li>
+                      <li className="flex flex-wrap items-baseline justify-between gap-3 py-6">
+                        <span className="font-display text-3xl font-light md:text-4xl">Норвегия, Тромсё</span>
+                        <span className="micro text-lipstick">18.12 — 22.12</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="self-end">
+                    <p className="max-w-lg font-light leading-7 text-muted-foreground">
+                      Индия, Непал, Тибет, Мексика, США, Мальдивы, Бали и Европа — через древние
+                      традиции, практики и внутреннюю работу. Напишите, чтобы узнать условия и
+                      забронировать место в группе.
+                    </p>
+                    <a
+                      href={CONTACT_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="button-dark mt-7"
+                    >
+                      Оставить запрос <ArrowRight size={15} />
+                    </a>
+                  </div>
+                </div>
+              </details>
             </Reveal>
           </div>
         </section>
