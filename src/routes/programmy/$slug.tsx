@@ -82,7 +82,7 @@ function ProductPage() {
             <p className="font-display text-2xl italic text-lipstick">Готовы начать?</p>
             <h2 className="mt-4 font-display text-5xl font-light leading-none md:text-7xl">Получите доступ к программе</h2>
             <p className="mx-auto mt-6 max-w-lg font-light leading-7 text-muted-foreground">{product.paymentUrl ? (product.paymentNote ?? "После оплаты напишите Весте в Telegram — она выдаст доступ.") : "Материалы находятся в закрытом Telegram-пространстве. Веста ответит на вопросы и поможет с доступом."}</p>
-            <div className="mt-9 flex flex-wrap justify-center gap-5">{product.paymentUrl && <a href={product.paymentUrl} target="_blank" rel="noreferrer" className="button-primary">Купить <ArrowRight size={15} /></a>}<a href={CONTACT_URL} target="_blank" rel="noreferrer" className={product.paymentUrl ? "button-outline" : "button-primary"}>{product.paymentUrl ? "Написать Весте" : "Получить доступ"} <ArrowRight size={15} /></a>{!product.paymentUrl && <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="button-outline">Задать вопрос</a>}</div>
+            <div className="mt-9 flex justify-center">{product.paymentUrl ? <a href={product.paymentUrl} target="_blank" rel="noreferrer" className="button-primary">Купить <ArrowRight size={15} /></a> : <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="button-primary">Получить доступ <ArrowRight size={15} /></a>}</div>
           </Reveal>
         </section>
       </main>

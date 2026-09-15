@@ -181,9 +181,6 @@ function Index() {
               О Весте
             </a>
           </nav>
-          <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="button-primary">
-            Написать Весте
-          </a>
         </div>
       </header>
 
@@ -572,12 +569,9 @@ function Index() {
               <br />
               Масштаб.
             </h2>
-            <div className="mt-10 flex flex-wrap justify-center gap-5">
+            <div className="mt-10 flex justify-center">
               <a href="#programmy" className="button-dark">
                 Смотреть программы <ArrowRight size={15} />
-              </a>
-              <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="button-light">
-                Написать Весте
               </a>
             </div>
           </Reveal>
