@@ -1,5 +1,7 @@
+import auditEzotericheskogoBiznesa from "../assets/product-mockups/audit-ezotericheskogo-biznesa.png.asset.json";
 import domMeditatsiy from "../assets/product-mockups/dom-meditatsiy.png.asset.json";
 import ezoterik from "../assets/product-mockups/ezoterik-u-kotorogo-pokupayut.png.asset.json";
+import vyydiIzTeni from "../assets/product-mockups/vyydi-iz-teni.png.asset.json";
 import ktoYa from "../assets/product-mockups/kto-ya-takaya-chtoby-govorit.png.asset.json";
 import kvantovayaVetka from "../assets/product-mockups/kvantovaya-vetka-roda.png.asset.json";
 import masterTaro from "../assets/product-mockups/master-taro.png.asset.json";
@@ -24,6 +26,8 @@ const productMockups: Record<string, { url: string }> = {
   "ezoterik-u-kotorogo-pokupayut": ezoterik,
   "kto-ya-takaya-chtoby-govorit": ktoYa,
   pereproshivka,
+  "vyydi-iz-teni": vyydiIzTeni,
+  "audit-ezotericheskogo-biznesa": auditEzotericheskogoBiznesa,
   "taro-dlya-sebya": taroDlyaSebya,
   "taro-dlya-zhizni": taroDlyaZhizni,
   "master-taro": masterTaro,
