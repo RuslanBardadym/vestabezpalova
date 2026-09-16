@@ -1,4 +1,4 @@
-# Roadmap — MVP сайта Весты Беспаловой
+# Roadmap — MVP сайта Весты Безпаловой
 
 - [x] Контент из Notion извлечён (главная структура, 15 продуктов, FAQ)
 - [x] Дизайн-система: Paper #f6f4ef / Ink #0a0a0a, красный #cc0000, Cormorant Garamond + Manrope
