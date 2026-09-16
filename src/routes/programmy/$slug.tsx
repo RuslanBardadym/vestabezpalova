@@ -12,9 +12,9 @@ export const Route = createFileRoute("/programmy/$slug")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.product.name} — Веста Беспалова` },
+      { title: `${loaderData?.product.name} — Веста Безпалова` },
       { name: "description", content: loaderData?.product.short ?? "" },
-      { property: "og:title", content: `${loaderData?.product.name} — Веста Беспалова` },
+      { property: "og:title", content: `${loaderData?.product.name} — Веста Безпалова` },
       { property: "og:description", content: loaderData?.product.short ?? "" },
       { property: "og:type", content: "product" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -31,7 +31,7 @@ function ProductPage() {
     <div className="min-h-screen bg-paper text-ink">
       <header className="border-b border-ink/10">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 md:px-10">
-          <Link to="/" className="font-display text-xl font-semibold">Веста Беспалова</Link>
+          <Link to="/" className="font-display text-xl font-semibold">Веста Безпалова</Link>
           <Link to="/" hash="programmy" className="nav-link flex items-center gap-2"><ArrowLeft size={14} /> Все программы</Link>
         </div>
       </header>
@@ -87,7 +87,7 @@ function ProductPage() {
         </section>
       </main>
 
-      <footer className="bg-ink py-10 text-paper"><div className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-10"><p className="font-display text-xl">Веста Беспалова</p><Link to="/" className="nav-link text-paper">На главную</Link></div></footer>
+      <footer className="bg-ink py-10 text-paper"><div className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-10"><p className="font-display text-xl">Веста Безпалова</p><Link to="/" className="nav-link text-paper">На главную</Link></div></footer>
     </div>
   );
 }
