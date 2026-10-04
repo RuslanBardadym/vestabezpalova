@@ -655,3 +655,27 @@ h3,
 :root{--color-ink:#24201e;--color-lipstick:#a62d3d;--color-lipstick-deep:#7f2030}
 .overflow-hidden.bg-paper>header{position:fixed;background:color-mix(in oklab,var(--color-paper) 92%,transparent);border-bottom:1px solid color-mix(in oklab,var(--color-ink) 10%,transparent);backdrop-filter:blur(14px)}
 @media(max-width:639px){.topic-list__meta{font-size:.75rem;letter-spacing:.14em;gap:.85rem}.overflow-hidden.bg-paper>main>#top{padding-top:6rem;min-height:80svh}.overflow-hidden.bg-paper>main>#top>div>.reveal:first-child{order:2;margin-top:1rem}.overflow-hidden.bg-paper>main>#top>div>.reveal:nth-child(2){order:1}.overflow-hidden.bg-paper>main>#top h1{font-size:clamp(2.85rem,13vw,4.4rem)}.overflow-hidden.bg-paper>main>section:nth-child(3) .reveal:nth-child(even){padding-left:1.75rem}}
+
+
+/* Final review: breathing room and lighter editorial surfaces */
+
+/* Final review: breathing room and lighter editorial surfaces */
+#programmy .section-nav { margin-top: 0.3125rem; }
+
+.overflow-hidden.bg-paper > main > section.bg-ink {
+  background-color: var(--color-muted);
+  color: var(--color-ink);
+}
+
+.overflow-hidden.bg-paper > main > section.bg-ink [class*="text-paper"] {
+  color: color-mix(in oklab, var(--color-ink) 76%, transparent) !important;
+}
+
+.overflow-hidden.bg-paper > main > section.bg-ink [class*="divide-paper"],
+.overflow-hidden.bg-paper > main > section.bg-ink [class*="border-paper"] {
+  border-color: color-mix(in oklab, var(--color-ink) 16%, transparent) !important;
+}
+
+.overflow-hidden.bg-paper > main > section.bg-ink .bg-paper {
+  background-color: var(--color-paper);
+}
