@@ -50,7 +50,6 @@ export const products: Product[] = [
   {
     slug: "ezoterik-u-kotorogo-pokupayut",
     paymentUrl: "https://crimson-client-bloom.lovable.app",
-    paymentNote: "На следующей странице выберите способ оплаты и получите доступ к программе.",
     name: "Эзотерик, у которого покупают",
     price: 390,
     section: "proyavlennost",
@@ -75,7 +74,6 @@ export const products: Product[] = [
   {
     slug: "kto-ya-takaya-chtoby-govorit",
     paymentUrl: "https://secure.wayforpay.com/button/bf1abe39af287",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Кто я такая, чтобы говорить",
     price: 250,
     section: "proyavlennost",
@@ -92,7 +90,6 @@ export const products: Product[] = [
   {
     slug: "pereproshivka",
     paymentUrl: "https://secure.wayforpay.com/button/bf91f13c05585",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Перепрошивка",
     price: 555,
     section: "proyavlennost",
@@ -127,7 +124,6 @@ export const products: Product[] = [
       "День 7. Система Reels: люди не просто смотрят вас, а становятся клиентами",
     ],
     paymentUrl: "https://secure.wayforpay.com/button/b94bedc650f82",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
   },
   {
     slug: "audit-ezotericheskogo-biznesa",
@@ -148,12 +144,10 @@ export const products: Product[] = [
       "главные затыки и конкретные шаги по изменениям",
     ],
     paymentUrl: "https://secure.wayforpay.com/button/b2c1a8ba8dbb4",
-    paymentNote: "После оплаты напишите Весте в Telegram слово «Аудит».",
   },
   {
     slug: "taro-dlya-sebya",
     paymentUrl: "https://secure.wayforpay.com/button/b391cea4aa823",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Таро для себя",
     price: 399,
     section: "taro",
@@ -166,7 +160,6 @@ export const products: Product[] = [
   {
     slug: "taro-dlya-zhizni",
     paymentUrl: "https://secure.wayforpay.com/button/b6b957b4f7dca",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Таро для жизни",
     price: 599,
     section: "taro",
@@ -180,7 +173,6 @@ export const products: Product[] = [
   {
     slug: "master-taro",
     paymentUrl: "https://secure.wayforpay.com/button/b18229c40980b",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Мастер Таро",
     price: 1000,
     section: "taro",
@@ -193,7 +185,6 @@ export const products: Product[] = [
   {
     slug: "prizyv-sily-roda",
     paymentUrl: "https://secure.wayforpay.com/button/bd95482b96fac",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Призыв Силы Рода",
     price: 444,
     section: "rod",
@@ -211,7 +202,6 @@ export const products: Product[] = [
   {
     slug: "kvantovaya-vetka-roda",
     paymentUrl: "https://secure.wayforpay.com/button/bf385cb46f3e3",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Квантовая ветка Рода",
     price: 2000,
     section: "rod",
@@ -224,7 +214,6 @@ export const products: Product[] = [
   {
     slug: "raspakovka-dara",
     paymentUrl: "https://secure.wayforpay.com/button/baa263ebc758f",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Распаковка Дара",
     price: 390,
     section: "rod",
@@ -237,7 +226,6 @@ export const products: Product[] = [
   {
     slug: "severnaya-magiya",
     paymentUrl: "https://secure.wayforpay.com/button/b7c9726be6e2e",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Северная магия",
     price: 3000,
     section: "magiya",
@@ -250,7 +238,6 @@ export const products: Product[] = [
   {
     slug: "dom-meditatsiy",
     paymentUrl: "https://secure.wayforpay.com/button/b4e3282d521fd",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Дом медитаций",
     price: 350,
     section: "magiya",
@@ -269,7 +256,6 @@ export const products: Product[] = [
   {
     slug: "sila-vedmy",
     paymentUrl: "https://secure.wayforpay.com/button/bf4cf3a6c861b",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Сила ведьмы",
     price: 1500,
     section: "magiya",
@@ -283,7 +269,6 @@ export const products: Product[] = [
   {
     slug: "taynye-simvoly",
     paymentUrl: "https://secure.wayforpay.com/button/bd705a3ef31af",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Тайные символы",
     price: 333,
     section: "magiya",
@@ -296,7 +281,6 @@ export const products: Product[] = [
   {
     slug: "mne-mozhno-vsyo",
     paymentUrl: "https://secure.wayforpay.com/button/b53daed2d437e",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Мне можно всё",
     price: 2222,
     section: "izmeneniya",
@@ -318,7 +302,6 @@ export const products: Product[] = [
   {
     slug: "masterskaya-mechty",
     paymentUrl: "https://secure.wayforpay.com/button/bf3d36ae72172",
-    paymentNote: "После оплаты напишите Весте в Telegram — она выдаст доступ.",
     name: "Мастерская осуществления мечты",
     price: 667,
     section: "izmeneniya",
