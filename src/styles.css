@@ -679,3 +679,99 @@ h3,
 .overflow-hidden.bg-paper > main > section.bg-ink .bg-paper {
   background-color: var(--color-paper);
 }
+
+
+/* Contrast, depth and restrained motion */
+:root {
+  --surface-elevated: #ece6dc;
+  --surface-deep: #302a28;
+}
+
+/* Large editorial sections become warm, layered surfaces instead of flat black panels. */
+.overflow-hidden.bg-paper > main > section.bg-ink:not(.relative.isolate) {
+  background: linear-gradient(135deg, #f3f0e9 0%, var(--surface-elevated) 100%) !important;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.8), inset 0 -1px color-mix(in oklab, var(--color-ink) 9%, transparent);
+}
+
+/* The two numbered directions are intentionally dark objects with readable content. */
+.overflow-hidden.bg-paper main .group.bg-ink {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(145deg, #3f3733 0%, var(--surface-deep) 72%) !important;
+  box-shadow: 0 24px 52px -30px color-mix(in oklab, var(--color-ink) 82%, transparent), inset 0 1px rgba(255, 255, 255, 0.12);
+}
+.overflow-hidden.bg-paper main .group.bg-ink::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background: radial-gradient(circle at 85% 12%, rgba(181, 45, 64, 0.28), transparent 31%), radial-gradient(circle at 12% 88%, rgba(255, 255, 255, 0.08), transparent 28%);
+}
+.overflow-hidden.bg-paper main .group.bg-ink :is(h1, h2, h3, p, .font-display) {
+  color: var(--color-paper) !important;
+}
+.overflow-hidden.bg-paper main .group.bg-ink p {
+  color: color-mix(in oklab, var(--color-paper) 74%, transparent) !important;
+}
+
+/* Recommendation retains its atmospheric image, while the text is reliably readable. */
+.overflow-hidden.bg-paper > main > section.relative.isolate.bg-ink {
+  background-color: var(--surface-deep) !important;
+  color: var(--color-paper);
+}
+.overflow-hidden.bg-paper > main > section.relative.isolate.bg-ink [class*="bg-ink/"] {
+  background: linear-gradient(115deg, rgba(32, 26, 24, 0.84), rgba(49, 37, 35, 0.62)) !important;
+}
+.overflow-hidden.bg-paper > main > section.relative.isolate.bg-ink :is(h1, h2, h3, p, .font-display) {
+  color: var(--color-paper) !important;
+  text-shadow: 0 2px 20px rgba(18, 13, 12, 0.28);
+}
+.overflow-hidden.bg-paper > main > section.relative.isolate.bg-ink .text-lipstick {
+  color: #ee8795 !important;
+}
+
+/* The Telegram block is elevated rather than another dark rectangle. */
+.telegram-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-color: color-mix(in oklab, var(--color-lipstick) 18%, var(--color-ink) 10%);
+  background: linear-gradient(135deg, #f7f4ed 0%, #e9dfd2 100%);
+  box-shadow: 0 24px 65px -42px color-mix(in oklab, var(--color-ink) 62%, transparent), inset 0 1px rgba(255, 255, 255, 0.85);
+  color: var(--color-ink);
+}
+.telegram-section::after {
+  position: absolute;
+  z-index: -1;
+  top: -8rem;
+  right: -5rem;
+  width: 19rem;
+  height: 19rem;
+  border-radius: 999px;
+  content: "";
+  background: radial-gradient(circle, color-mix(in oklab, var(--color-lipstick) 21%, transparent), transparent 68%);
+}
+
+/* Tactile micro-interactions. */
+.button-primary, .button-dark {
+  box-shadow: 0 14px 28px -17px color-mix(in oklab, var(--color-ink) 82%, transparent);
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .program-card, .group.bg-ink, .telegram-section, .faq summary, .section-nav__item, .button-primary, .button-dark {
+    will-change: transform;
+  }
+  .program-card:hover { transform: translateY(-8px); box-shadow: 0 30px 58px -34px color-mix(in oklab, var(--color-ink) 54%, transparent); }
+  .group.bg-ink:hover { transform: translateY(-6px); box-shadow: 0 32px 60px -32px color-mix(in oklab, var(--color-ink) 88%, transparent), inset 0 1px rgba(255, 255, 255, 0.16); }
+  .telegram-section:hover { transform: translateY(-4px); }
+  .section-nav__item:hover { transform: translateY(-2px); box-shadow: 0 10px 18px -15px color-mix(in oklab, var(--color-ink) 70%, transparent); }
+  .button-primary:hover, .button-dark:hover { transform: translateY(-3px); box-shadow: 0 21px 34px -20px color-mix(in oklab, var(--color-ink) 84%, transparent); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .program-card { animation: card-arrive 650ms cubic-bezier(0.19, 1, 0.22, 1) both; }
+  .program-card:nth-child(2) { animation-delay: 70ms; }
+  .program-card:nth-child(3) { animation-delay: 140ms; }
+  .faq[open] p { animation: answer-reveal 360ms ease-out both; }
+}
+@keyframes card-arrive { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes answer-reveal { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
