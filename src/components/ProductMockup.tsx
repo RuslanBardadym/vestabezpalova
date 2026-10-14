@@ -2,6 +2,7 @@ import auditEzotericheskogoBiznesa from "../assets/product-mockups/audit-ezoteri
 import domMeditatsiy from "../assets/product-mockups/dom-meditatsiy.png.asset.json";
 import ezoterik from "../assets/product-mockups/ezoterik-u-kotorogo-pokupayut.png.asset.json";
 import vyydiIzTeni from "../assets/product-mockups/vyydi-iz-teni.png.asset.json";
+import pogovori from "../assets/product-mockups/pogovori-s-kazhdym.png.asset.json";
 import ktoYa from "../assets/product-mockups/kto-ya-takaya-chtoby-govorit.png.asset.json";
 import kvantovayaVetka from "../assets/product-mockups/kvantovaya-vetka-roda.png.asset.json";
 import masterTaro from "../assets/product-mockups/master-taro.png.asset.json";
@@ -28,6 +29,7 @@ const productMockups: Record<string, { url: string }> = {
   pereproshivka,
   "vyydi-iz-teni": vyydiIzTeni,
   "audit-ezotericheskogo-biznesa": auditEzotericheskogoBiznesa,
+  "pogovori-s-kazhdym-lichno": pogovori,
   "taro-dlya-sebya": taroDlyaSebya,
   "taro-dlya-zhizni": taroDlyaZhizni,
   "master-taro": masterTaro,
