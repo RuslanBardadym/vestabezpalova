@@ -5,7 +5,7 @@ import { Reveal } from "../components/Reveal";
 import { ProductMockup } from "../components/ProductMockup";
 import { sections, productsBySection, formatPrice, CONTACT_URL } from "../lib/products";
 import heroBg from "../assets/hero-bg.jpg";
-import vestaHero from "../assets/vesta-hero.png.asset.json";
+import vestaHero from "../assets/vesta-hero-flowers.png.asset.json";
 import vestaAbout from "../assets/vesta-about.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -198,9 +198,9 @@ function Index() {
               <div className="image-reveal relative aspect-[4/5] overflow-hidden shadow-luxury">
                 <img
                   src={vestaHero.url}
-                  alt="Веста Безпалова с лимоном"
-                  width={3024}
-                  height={4032}
+                  alt="Веста Безпалова с букетом цветов"
+                  width={1080}
+                  height={1440}
                   fetchPriority="high"
                   className="h-full w-full object-cover object-[center_20%] transition-transform duration-1000 hover:scale-[1.025] md:object-[center_18%]"
                 />
@@ -459,8 +459,8 @@ function Index() {
               <img
                 src={vestaAbout.url}
                 alt="Веста Безпалова — эзотерик и наставник"
-                width={3024}
-                height={4032}
+                width={1080}
+                height={1440}
                 loading="lazy"
                 className="relative aspect-[4/5] w-full object-cover object-[center_12%] md:object-[center_10%]"
               />
