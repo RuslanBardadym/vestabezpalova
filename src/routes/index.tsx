@@ -595,7 +595,12 @@ function Index() {
               Telegram
             </a>
           </div>
-          <p className="text-xs text-paper/35">© {new Date().getFullYear()}</p>
+          <div className="flex flex-col gap-2 md:items-end">
+            <Link to="/oferta" className="text-xs text-paper/60 underline-offset-4 hover:text-paper hover:underline">
+              Договір оферти
+            </Link>
+            <p className="text-xs text-paper/35">© {new Date().getFullYear()}</p>
+          </div>
         </div>
       </footer>
     </div>
