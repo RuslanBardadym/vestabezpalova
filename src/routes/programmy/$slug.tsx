@@ -18,6 +18,9 @@ function ProductPage() {
   const actionClass = product.paymentUrl ? "button-primary" : "button-dark";
   const accessNote = "После нажатия откроется Telegram Весты. Напишите название программы — она подскажет, как получить доступ.";
   const showAccessNote = !product.paymentUrl;
+  const needsConsent = !!product.paymentUrl && !product.paymentUrl.includes("wayforpay.com");
+  const [agreed, setAgreed] = useState(false);
+  const blocked = needsConsent && !agreed;
   return <div className="min-h-screen bg-paper text-ink">
     <header className="border-b border-ink/10 bg-paper/92 backdrop-blur-md"><div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 md:px-10"><Link to="/" className="font-display text-xl font-semibold">Веста Безпалова</Link><Link to="/" hash="programmy" className="nav-link flex items-center gap-2"><ArrowLeft size={14} /> Все программы</Link></div></header>
     <main>
